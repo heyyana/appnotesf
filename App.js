@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Login from './components/Login/login'
+import Menu from './components/Menu/menu';
 
  
 
@@ -13,4 +14,6 @@ export default function App() {
   if (!user) {
     return <Login changeStatus={(user) => setUser(user)} />
   }
+
+  return <Menu/>
 }

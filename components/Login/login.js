@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Image, SafeAreaView, Button, TouchableOpacity }
 import { TextInput } from 'react-native-paper';
 import firebase from '../../services/connectionFirebase'
 
-export default function Login({ changeStatus }) {
+export default function Login({changeStatus}) {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -55,16 +55,11 @@ export default function Login({ changeStatus }) {
           secureTextEntry
           right={<TextInput.Icon icon="eye" />}
         /> <hr />
-        <Button
-          onPress={() => this.props.navigation.navigate('TelaPrincipal')}
-          title="Entrar"
-          color="#B8860B"
-        />
-      </SafeAreaView>
+       </SafeAreaView>
       <TouchableOpacity
         style={[styles.handleLogin,
-        { backgroundColor: type === 'login' ? '#DAA520' : '#CD853F' }]}
-        onPress={'handleLogin'}
+        { backgroundColor: type === 'login' ? '#8B4513' : '#CD853F' }]}
+        onPress={handleLogin}
       >
         <Text style={styles.loginText}>
           {type === 'login' ? 'Acessar' : 'Cadastrar'}
@@ -75,7 +70,7 @@ export default function Login({ changeStatus }) {
 
       <TouchableOpacity
         onPress={() => setType(type => type === 'login' ? 'cadastrar' : 'login')}>
-        <Text style={{ textAlign: 'center' }}>
+        <Text style={{ textAlign: 'center'}}>
           {type === 'login' ? 'Criar uma conta' : 'Já possuo uma conta'}
         </Text>
       </TouchableOpacity>
@@ -87,8 +82,9 @@ const styles = StyleSheet.create({
 
   container: {
     flex: 1,
-    backgroundColor: '#000000',
+    backgroundColor: '#B8860B',
     padding: 8,
+    alignContent: 'center',
   },
 
   input: {
@@ -100,16 +96,19 @@ const styles = StyleSheet.create({
     width: 320,
     padding: 10,
     borderWidth: 1,
-    borderColor: '#141414'
+    borderColor: '#141414',
   },
 
   logo: {
-    width: 350,
-    height: 360,
+    alignContent: 'center',
+    margin: 'auto',
+    width: 300,
+    height: 300,
   },
 
   loginText: {
     textAlign: "center",
+    textColor: '#FFF',
   }
 
 }

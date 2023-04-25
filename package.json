@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
+    "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "*",
     "@react-navigation/stack": "*",
     "expo": "~46.0.21",
