@@ -52,8 +52,8 @@ export default function Menu() {
                             case 'Listar':
                                 iconName = 'film';
                                 break;
-                            case 'Bicicletas':
-                                iconName = 'violin';
+                            case 'Adicionar':
+                                iconName = 'file-video';
                                 break;
                             case 'Ler API':
                                 iconName = 'bell';
@@ -75,7 +75,7 @@ export default function Menu() {
                 <Tab.Screen name="Home" component={HomeScreen} />
                 <Tab.Screen name="Listar" component={ListScreen} />
                 <Tab.Screen
-                    name="Bicicletas"
+                    name="Adicionar"
                     component={PostScreen}
                 />
                 <Tab.Screen name="Ler API" component={NotificationsScreen} />
