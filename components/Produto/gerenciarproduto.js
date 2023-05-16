@@ -1,88 +1,171 @@
 import React, { useState, useEffect, useRef } from 'react'; 
-
-import { 
-
-    View, Text, StyleSheet, 
-
-    TouchableOpacity, Keyboard, FlatList, ActivityIndicator 
-
-} from 'react-native'; 
-
+import { View, Text, StyleSheet, TouchableOpacity, Keyboard, FlatList, ActivityIndicator } from 'react-native'; 
 import { TextInput } from 'react-native-paper'; 
 
-export default function GerenciarProdutos() {  
+const Separator = () => { 
+    return <View style={styles.separator} />; 
+} 
 
-  const [name, setName] = useState(''); 
-  const [category, setCategory] = useState(''); 
-  const [comment, setComment] = useState(''); 
-  const [stars, setStars] = useState(''); 
-  const [key, setKey] = useState(''); 
 
-  return ( 
+export default function GerenciarProdutos() { 
 
-    <View style={styles.container}> 
+    const [nome, setNome] = useState('');  
+    const [marca, setMarca] = useState('');  
+    const [valor, setValor] = useState('');  
+    const [cor, setCor] = useState('');  
+    const [key, setKey] = useState('');  
 
-        <TextInput 
+    return ( 
 
-            placeholder='Nome' 
+        <View style={styles.container}> 
 
-            left={<TextInput.Icon icon="name" />} 
+            <TextInput 
 
-            maxLength={40} 
+                placeholder='Nome' 
 
-            style={styles.input} 
+                left={<TextInput.Icon icon="file-video" />} 
 
-            onChangeText={(texto) => setName(texto)} 
+                maxLength={40} 
 
-            value={name} 
+                style={styles.input} 
 
-        /> 
+                onChangeText={(text) => setNome(text)} 
 
-        <TextInput 
+                value={nome} 
 
-            placeholder='Categoria' 
+            /> 
 
-            left={<TextInput.Icon icon="category" />} 
+            <Separator/>
 
-            style={styles.input} 
+            <TextInput 
 
-            onChangeText={(texto) => setBrand(texto)} 
+                placeholder='Resenha' 
 
-            value={brand} 
+                left={<TextInput.Icon icon="read" />} 
 
-        /> 
+                style={styles.input} 
 
-        <TextInput 
+                onChangeText={(text) => setMarca(text)} 
 
-            placeholder='Comentário' 
+                value={marca} 
+            /> 
 
-            left={<TextInput.Icon icon="comment" />} 
+            <Separator/>
 
-            style={styles.input} 
+            <TextInput 
+                placeholder='Pontuação' 
+                left={<TextInput.Icon icon="star" />} 
+                style={styles.input} 
+                onChangeText={(text) => setValor(text)} 
+                value={valor} 
+            /> 
 
-            onChangeText={(texto) => setPrice(texto)} 
+            <Separator/>
 
-            value={price} 
+            <TextInput 
+                placeholder='Favoritar' 
+                left={<TextInput.Icon icon="heart" />} 
+                style={styles.input} 
+                onChangeText={(text) => setCor(text)} 
+                value={cor} 
+            />                  
 
-        /> 
+        </View> 
 
-        <TextInput 
-
-            placeholder='Estrelas' 
-
-            left={<TextInput.Icon icon="stars" />} 
-
-            style={styles.input} 
-
-            onChangeText={(texto) => setColor(texto)} 
-
-            value={color} 
-
-        />                  
-
-    </View> 
-
-); 
+    ); 
 
 } 
 
+const styles = StyleSheet.create({ 
+
+    container: { 
+
+        flex: 1, 
+
+        margin: 10, 
+
+    }, 
+
+    input: { 
+
+        borderWidth: 1, 
+
+        borderColor: '#121212', 
+
+        height: 40, 
+
+        fontSize: 13, 
+
+        borderRadius: 8,
+        marginBottom: 10
+    }, 
+
+    separator: { 
+
+        marginVertical: 5, 
+
+    }, 
+
+    button: { 
+
+        flexDirection: 'row', 
+
+        alignItems: 'center', 
+
+        backgroundColor: '#3ea6f2', 
+
+        borderWidth: 0.5, 
+
+        borderColor: '#fff', 
+
+        height: 40, 
+
+        borderRadius: 5, 
+
+        margin: 5, 
+
+    }, 
+
+    buttonImageIconStyle: { 
+
+        padding: 10, 
+
+        margin: 5, 
+
+        height: 25, 
+
+        width: 25, 
+
+        resizeMode: 'stretch', 
+
+    }, 
+
+    buttonTextStyle: { 
+
+        color: '#fff', 
+
+        marginBottom: 4, 
+
+        marginLeft: 100, 
+
+        fontSize: 20 
+
+    }, 
+
+    buttonIconSeparatorStyle: { 
+
+        backgroundColor: '#fff', 
+
+        width: 1, 
+
+        height: 20, 
+
+    }, 
+
+    listar: { 
+
+        fontSize: 20, 
+        textAlign: 'center' 
+    } 
+
+}); 

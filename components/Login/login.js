@@ -46,7 +46,7 @@ export default function Login({changeStatus}) {
           value={email}
           onChangeText={(text) => setEmail(text)}
           right={<TextInput.Icon icon="email" />}
-        /> <hr />
+        /> 
         <TextInput
           label="Password"
           style={styles.input}
@@ -54,7 +54,7 @@ export default function Login({changeStatus}) {
           onChangeText={(text) => setPassword(text)}
           secureTextEntry
           right={<TextInput.Icon icon="eye" />}
-        /> <hr />
+        /> 
        </SafeAreaView>
       <TouchableOpacity
         style={[styles.handleLogin,
