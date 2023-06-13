@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import GerenciarProdutos from '../Produto/gerenciarproduto';
+import Perfil from '../Produto/perfil';
 
 
 //import LinearGradient from 'react-native-linear-gradient';

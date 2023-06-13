@@ -8,6 +8,7 @@ import 'firebase/compat/database';
 let firebaseConfig = {
   apiKey: "AIzaSyBA4ns87SsEH6ItMfnscMEduwWnc0tq1Y0",
   authDomain: "bdnotesf.firebaseapp.com",
+  databaseURL: "https://bdnotesf-default-rtdb.firebaseio.com",
   projectId: "bdnotesf",
   storageBucket: "bdnotesf.appspot.com",
   messagingSenderId: "1067197279709",
