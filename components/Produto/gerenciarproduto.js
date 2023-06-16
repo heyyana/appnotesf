@@ -43,9 +43,9 @@ export default function GerenciarProdutos() {
     //implementação dos métodos update ou insert 
     async function insertUpdate() {
         //editar dados 
-        if (nome !== '' & marca !== '' & imagem !== '' & preco !== '' & key !== '') {
+        if (nome !== '' & marca !== '' & cor !== '' & preco !== '' & key !== '') {
             firebase.database().ref('produtos').child(key).update({
-                nome: nome, marca: marca, imagem: imagem, preco: preco
+                nome: nome, marca: marca, cor: cor, preco: preco
             })
             Keyboard.dismiss();
             alert('Produto Editado!');
@@ -82,7 +82,7 @@ export default function GerenciarProdutos() {
             .then(() => {
                 //todos os itens que forem diferentes daquele que foi deletado 
                 //serão atribuidos no array 
-                const findProdutos = cars.filter(item => item.key !== key)
+                const findProdutos = produtos.filter(item => item.key !== key)
                 setProdutos(findProdutos)
             })
     }
